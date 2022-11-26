@@ -1,0 +1,295 @@
+@import 'vars'
+@import 'fonts'
+@import 'libs'
+@import 'base'
+
+
+label
+  display: block
+  font-weight: 600
+  margin-bottom: 20px
+
+
+.input-form
+  background-color: transparentize(darken($dark, 10%), .6)
+  display: block
+  border: 0
+  width: 100%
+  border-bottom: 2px solid $accent
+  border-radius: 8px
+  color: $light-dark
+  letter-spacing: 1px
+  outline: none
+  padding: 8px 9px
+  transition: .2s all ease-in
+
+  &:hover
+    background-color: transparentize(darken($dark, 10%), .4)
+
+  &:focus
+    transform: scale(1.03)
+
+#form-panel
+  grid-column: 2/6
+
+#form
+  @extend %grid
+  width: 100%
+  grid-gap: 20px
+  grid-gap: 20px
+  grid-template-columns: 400px 400px
+  &.num
+    grid-template-columns: repeat(4, 200px)
+    .form-inp-header
+      grid-column: 1/6
+      justify-self: center
+      width: 40%
+.create-pass
+  @extend %grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: 20px
+  grid-column: 1/3
+
+
+.wrapper
+  @extend %grid
+  min-height: 100vh
+  grid-template-columns: repeat(5, 1fr)
+  grid-template-rows: minmax(60px, 1fr)
+  grid-gap: 20px
+
+
+.form-login
+  @extend %grid
+  align-self: center
+  justify-self: center
+  grid-column: 2/5
+  grid-row: 1/4
+  background-color: $dark
+  border-radius: 30px
+  color: $light-dark
+  height: auto
+  padding: 40px
+  text-align: center
+  width: 300px
+
+.actions
+  @extend %grid
+  grid-row-gap: 10px
+  grid-column: 1/2
+
+.table-box
+  padding: 0.1em
+  grid-column: 2/6
+
+.table
+  display: table
+  overflow: hidden
+  text-align: center
+  width: 100%
+  border-radius: 5px
+  border-collapse: collapse
+
+  th
+    font-weight: bold
+    font-size: 1em
+    color: $light-dark
+    background-color: #1F2739
+
+  tr:hover
+    background-color: #464A52
+    box-shadow: 0 6px 6px -6px #0E1119
+
+  td
+    font-weight: 600
+    font-size: 1em
+    color: $light-dark
+    box-shadow: 0 2px 2px -2px #0E1119
+
+    &:last-child
+      width: 50px
+
+      & a
+        display: block
+        color: white
+        width: 100%
+        padding: 0 8px
+        font-size: 1.5em
+        background-color: dodgerblue
+        transition: .4s all linear
+
+        &:first-child
+          background-color: $red
+          &:hover
+            transform: translate(6px, -6px)
+            box-shadow: darken($red, 40%) -1px 1px, darken($red, 40%) -2px 2px, darken($red, 40%) -3px 3px, darken($red, 40%) -4px 4px, darken($red, 40%) -5px 5px, darken($red, 40%) -6px 6px
+        &:hover
+          transform: translate(6px, -6px)
+          box-shadow: darken(dodgerblue, 40%) -1px 1px, darken(dodgerblue, 40%) -2px 2px, darken(dodgerblue, 40%) -3px 3px, darken(dodgerblue, 40%) -4px 4px, darken(dodgerblue, 40%) -5px 5px, darken(dodgerblue, 40%) -6px 6px
+
+
+    &:not(:last-child):not(.not-hover):hover
+      background-color: #FFF842
+      color: $dark
+      box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px
+      transform: translate(6px, -6px)
+      transition: .4s all linear
+
+  td, tr
+    border: 1px solid $accent
+
+  tr:nth-child(odd)
+    background-color: #323C50
+
+  tr:nth-child(even)
+    background-color: #2C3446
+
+.table-one-col
+  width: 100%
+  border-collapse: collapse
+  td
+    padding: 10px 5px
+  td,tr
+    border: 0
+
+.flex-col-2
+  display: flex
+  justify-content: space-between
+
+
+.btn, .dt-button
+  display: inline-block
+  border: none
+  color: #fff
+  text-decoration: none
+  background-color: $accent
+  padding: 10px 20px
+  font-size: 20px
+  font-weight: 800
+  border-radius: 2px
+  text-align: center
+  position: relative
+  outline: none
+  transition: background-color .1s ease
+  cursor: pointer
+
+  &::after
+    transition: background-color .2s ease
+    position: absolute
+    content: ''
+    height: 4px
+    bottom: 0
+    width: 100%
+    background-color: darken($accent, 50%)
+    opacity: .18
+    border-bottom-left-radius: 2px
+    border-bottom-right-radius: 2px
+    left: 0
+
+  &:focus, &:hover
+    text-decoration: none
+    color: #fff
+
+  &:hover
+    background-color: lighten($accent, 5%)
+
+    &::after
+      opacity: .22
+
+  &:active
+    background-color: darken($accent, 5%)
+
+    &::after
+      opacity: .32
+
+  &.btn-red
+    background-color: $red
+
+    &::after
+      background-color: darken($red, 15%)
+
+    &:hover
+      background-color: lighten($red, 5%)
+
+    &::after
+      opacity: .22
+
+    &:active
+      background-color: darken($red, 5%)
+
+      &::after
+        opacity: .32
+
+  &.btn-green
+    background-color: $green
+
+    &::after
+      background-color: darken( $green, 15%)
+
+    &:hover
+      background-color: lighten( $green, 5%)
+
+      &::after
+        opacity: .22
+
+    &:active
+      background-color: darken($green, 5%)
+
+      &::after
+        opacity: .32
+
+.aside-left
+  @extend %grid
+  grid-column: 1/2
+  .aside-list li a
+    display: block
+    color: $light-dark
+    background-color: $dark
+    padding: 10px
+    font-weight: 600
+    border-bottom: 2px solid $accent
+    transition: .1s background-color, color linear
+
+    &:hover
+      background-color: $accent
+      color: #fff
+.burger-box
+  width: 100%
+  background-color: $dark
+  padding: 10px 15px
+  display: none
+  .burger
+    width: 40px
+    height: 40px
+    flex-direction: column
+    justify-content: space-between
+    display: flex
+    span
+      width: 100%
+      height: 4px
+      background-color: white
+      border-radius: 2px
+
+
+
+
+
+.dataTables_filter
+  input
+    padding: 8px 10px
+    border-radius: 20px
+    outline: none
+    border: 0
+    background-color: #323c50
+    color: white
+  i
+    position: absolute
+    right: 5px
+    top: 24%
+    color: white
+    font-size: 20px
+
+.dt-button-collection
+  margin-top: 12px !important
+@import 'media'
+

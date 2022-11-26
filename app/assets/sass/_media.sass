@@ -1,0 +1,76 @@
+@media only screen and (max-width: 1300px)
+  .wrapper
+    grid-template-rows: 60px auto
+  .actions
+    align-self: start
+    grid-row: 2/3
+    .btn
+      padding: 22px 0
+      font-size: 20px
+  .aside-left
+    grid-column: 1 / 6
+    position: relative
+    .aside-list
+      transition: .3s all ease-in-out
+      position: absolute
+      z-index: 2
+      top: 60px
+      left: 0
+      right: 0
+      text-align: center
+      transform: translateY(-1000px)
+      &.active
+        transform: translateY(0)
+  .burger-box
+    display: block
+
+  #form
+    grid-template-columns: 1fr 1fr
+    &.num
+      grid-template-columns: repeat(4, 150px)
+
+
+@media only screen and (max-width: 992px)
+  .wrapper
+    grid-template-columns: 20% repeat(3, 1fr)
+  #form
+    grid-template-columns: 1fr 1fr
+    &.num
+      grid-template-columns: repeat(2, 200px)
+
+@media only screen and (max-width: 768px)
+  .wrapper
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 60px 150px auto
+  .actions
+    grid-column: 1/3
+    align-self: center
+    .btn
+      font-size: 20px
+      padding: 10px
+  .table-box
+    grid-column: 1/3
+  #form-panel
+    grid-column: 1/3
+    #form
+      grid-template-columns: 1fr
+      &.num
+        grid-template-columns: repeat(2, 1fr)
+      .form-inp-header
+        grid-column: 1/3
+  label
+    grid-column: 1/3
+    width: 100%
+  .form-login
+    grid-column: 1/3
+    width: 100%
+    align-self: stretch
+    justify-self: stretch
+    border-radius: 0
+    form
+      display: grid
+      grid-template-columns: 1fr
+      align-content: center
+  .aside-left
+    grid-column: 1 / 3
+    position: relative
